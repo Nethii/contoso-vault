@@ -33,20 +33,22 @@
 # print(type(message))
 # print(type(key))
 
-message: str = input("Message: ")
-key: int = int(input("Key: "))
+# message: str = input("Message: ")
+# key: int = int(input("Key: "))
 
-# # 'str' -> STRING (words)
-# # 'int' -> INTEGER (whole numbers)
+# # # 'str' -> STRING (words)
+# # # 'int' -> INTEGER (whole numbers)
 
-ciphertext = ""
+# ciphertext = ""
 
-for letter in message: # loop
-    ciphertext_letter = chr(ord(letter) + key)
-    # print(ciphertext_letter, end="")
-    ciphertext += ciphertext_letter
+# for letter in message: # loop
+#     ciphertext_letter = chr(ord(letter) + key)
+#     # print(ciphertext_letter, end="")
+#     ciphertext += ciphertext_letter
 
-print(ciphertext)
+
+
+# print(ciphertext)
 
 # message = "UPDATE"
 
@@ -62,3 +64,23 @@ print(ciphertext)
 # "XSG"
 # "XSGD"
 
+# 4.
+ALPHABET_SIZE = 26
+
+message: str = input("Message: ")
+key: int = int(input("Key: "))
+
+ciphertext = ""
+
+for letter in message: 
+    shifted = ord(letter) + key
+    if shifted > ord("Z"):
+        shifted -= ALPHABET_SIZE
+    ciphertext += chr(shifted)
+    
+
+
+    # If ciphertext_letter goes beyond "Z", the corresponding answer will be wrong
+    
+
+print(ciphertext)
